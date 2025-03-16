@@ -1,0 +1,310 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+@theme {
+    --color-primary: #E86B35;
+}
+
+
+:root {
+    --background-color: #F7F7F7;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.btn-primary {
+    @apply text-white text-sm font-medium bg-primary px-[30px] py-[8px] rounded-full items-center inline-flex justify-center cursor-pointer;
+}
+
+.btn-glass {
+    @apply text-black text-sm font-medium bg-white border border-[#DEE0E3] px-[30px] py-[8px] rounded-full items-center inline-flex cursor-pointer justify-center;
+    box-shadow: 0px 1px 2px 0px #14151A0D;
+}
+
+.default__title {
+    @apply text-[32px] lg:text-[40px] font-[600] leading-[48px] text-black text-center;
+}
+
+.default__subtitle {
+    @apply text-sm font-[400] text-primary
+}
+
+.header {
+    @apply flex justify-between items-center px-6 lg:px-32 min-h-[62px] lg:min-h-[95px] ;
+    background: linear-gradient(180deg, rgba(249, 236, 233, 1) 10%, rgba(255, 255, 255, 100%) 80%);
+  }
+  
+
+@media (max-width: 1024px) {
+    .header {
+        background: white;
+    }
+}
+
+
+.header__nav {
+    @apply items-center font-medium text-[14px] leading-[17.5px] 
+           lg:flex hidden bg-white rounded-full 
+           backdrop-blur-[9.9992px] 
+           shadow-[0px_20px_32px_-12px_#E9580C1F,0px_4px_6px_0px_#E9580C0A,0px_2px_3px_0px_#E9580C0A,0px_0px_2px_0px_#E9580C14]
+           p-1 h-[44px];
+    
+}
+
+.header__nav__link {
+    @apply py-[8.5px] px-3 text-[#525252] text-sm font-medium;
+}
+
+.header__btn {
+    @apply rounded-full bg-white p-1 backdrop-blur-[10px] shadow-[0px_20px_32px_-12px_#E9580C1F] h-[42px] flex items-center;
+    box-shadow: 
+        0px 20px 32px -12px #E9580C1F,
+        0px 4px 6px 0px #E9580C0A,
+        0px 2px 3px 0px #E9580C0A,
+        0px 0px 2px 0px #E9580C14;
+}
+
+.padding__block {
+    @apply px-6 py-16 lg:py-20 lg:px-[120px]
+}
+
+.padding-y__block {
+    @apply py-16 lg:py-20
+}
+
+.preview {
+    @apply flex lg:flex-row flex-col justify-between gap-2.5;
+}
+
+.preview__content {
+    @apply flex flex-col gap-6 max-w-[748px];
+}
+
+.preview__content > *:last-child {
+    @apply mt-4;
+}
+
+.preview__buttons {
+    @apply flex gap-4
+}
+
+.preview__images {
+    @apply flex items-center justify-center flex-col gap-6 mt-14 lg:mt-0 lg:min-h-[532px]
+}
+
+
+.preview__images__item {
+    @apply rounded-[25px] w-[95px] h-[95px] flex items-center justify-center border-2 border-white;
+    box-shadow: 12.82px 40.8px 17.49px 0px #00000003;
+
+    box-shadow: 6.99px 23.32px 13.99px 0px #0000000A;
+
+    box-shadow: 3.5px 10.49px 10.49px 0px #00000012;
+
+    box-shadow: 1.17px 2.33px 5.83px 0px #00000014;
+}
+
+
+.preview__images__gradient2 {
+    @apply w-[250px] h-[250px];
+    position: absolute;
+    inset: 0;
+    left: 0px;
+    background: radial-gradient(circle, rgba(198,201,230,1) 26%, rgba(255,255,255,1) 55%);
+    z-index: -1;
+}
+.preview__images__block {
+    position: relative;
+    z-index: 1;
+}
+
+
+.preview__title {
+    @apply  text-3xl lg:text-[48px] font-[600] leading-[100%]
+}
+
+.blur-effect {
+    position: relative;
+    background-clip: padding-box;
+    filter: blur(100px);
+    transition: all 0.3s ease;
+    border-radius: 100%;
+  }
+  
+  .blur-effect:hover {
+    filter: blur(5px);
+  }
+
+.preview__text {
+    @apply text-[#0F132499] text-base lg:text-xl leading-7 max-w-[570px]
+}
+  
+
+.preview__background  {
+    @apply py-6 px-3.5 lg:p-14 flex items-center justify-center bg-[#EEF2F8]
+}
+
+.preview__background__img {
+    @apply w-full h-full object-cover rounded-2xl max-w-[1328px]
+}
+
+.result__text {
+    @apply  flex flex-col justify-center items-center;
+}
+
+.default__steps {
+    @apply flex lg:flex-row flex-col gap-20
+}
+
+.default__steps__text {
+    @apply flex flex-col gap-6
+}
+
+.default__steps__title {
+    @apply text-4xl font-semibold leading-[100%] text-black
+}
+
+.default__steps__subtitle {
+    @apply font-normal text-xl leading-7 text-[#0F132499] max-w-[460px]
+}
+
+.default__steps__number {
+    @apply text-[112px] font-semibold;
+    background: linear-gradient(180deg, rgba(232, 107, 53, 0.3) 0%, rgba(232, 107, 53, 0) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    }
+
+.default-nav {
+    @apply flex flex-col gap-6
+}
+
+.default-nav__text {
+    @apply font-normal text-lg lg:text-xl text-[#0F132499] leading-7;
+}
+
+.speed__advantages {
+    @apply flex gap-4 items-center
+}
+
+.speed__advantages__text {
+    @apply font-medium text-lg lg:text-xl text-black leading-7
+}
+
+.speed__paragraphes {
+    @apply flex gap-4 flex-col
+}
+
+.speed__img {
+    @apply w-full object-cover max-w-[1200px] flex mx-auto mt-10 lg:mt-16
+}
+
+.speed-tasks__content {
+    @apply flex gap-8 lg:flex-row flex-col
+}
+
+.speed-tasks__card {
+    @apply bg-white rounded-[20px] flex flex-col gap-4 p-5 flex-1
+}
+
+.speed-tasks__card__title {
+    @apply text-[22px] font-bold
+}
+
+.speed-tasks__card__subtitle {
+    @apply text-base font-medium text-[#6551DF]
+}
+
+.speed-tasks__card__list {
+    @apply  px-5 py-2.5 bg-[#F6F9FC] flex flex-col gap-2.5 rounded-[10px] flex-1 list-disc
+}
+
+.speed-tasks__card__list__item {
+    @apply marker:text-[#6188EC] ml-5
+}
+
+.speed-tasks__card__list__item__task {
+    @apply font-bold text-base text-black
+}
+
+.price {
+    @apply flex flex-col lg:block
+}
+
+.price__content {
+    @apply mt-10 lg:mt-16
+}
+
+.price__cards {
+    @apply flex gap-8 md:flex-row flex-col
+}
+
+.price__card {
+    @apply bg-white rounded-2xl p-8 border border-[#E4E4E4] flex-1 flex flex-col gap-5
+}
+
+.price__card__text {
+    @apply mb-4 flex-1 flex flex-col gap-2
+}
+
+.price__card__text__title {
+    @apply text-lg font-semibold
+}
+
+.price__card__features {
+    @apply mt-5 space-y-3
+}
+
+.price__card__features__item {
+    @apply flex items-start gap-2
+}
+
+.price__btns {
+    @apply  flex gap-6 items-center mx-auto lg:mx-0
+}
+
+.price__btn {
+    @apply rounded-full w-[44px] h-[44px] flex items-center justify-center bg-[#F9F9F9] cursor-pointer
+}
+
+.price__container {
+    @apply lg:flex contents justify-between
+}
+
+.for__content {
+    @apply flex flex-col justify-center items-center gap-16 mt-10 lg:mt-16
+}
+
+.for__cards {
+    @apply flex gap-6 justify-between w-full  md:flex-row flex-col
+}
+
+.footer {
+    @apply mt-1.5 rounded-none bg-black px-5 lg:px-[120px] py-20 flex flex-col gap-10 sm:gap-20;
+}
+
+.footer__content {
+    @apply flex gap-6 justify-between items-start
+}
+
+.bg-custom-gradient {
+    background: linear-gradient(0deg, #FFFFFF 66.39%, #F4FFF2 100%);
+  }
+
+.bg-custom-gradient-2 {
+    background: linear-gradient(0deg, #FFFFFF 66.39%, #FFF7F2 100%);
+}
+
+/* .btn-primary {
+    background-color: var(--primary);
+    color: #fff;
+    padding: 8.5px 31px;
+} */
+
+
