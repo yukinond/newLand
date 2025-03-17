@@ -8,22 +8,22 @@ const targetUrlAuth = ref('https://app.harmex.ru/auth')
 
 const resultInfo = ref([
   {
-    img: '/img/Card1.png',
-    imgMobile: '/img/Card1Mobile.png',
+    img: 'https://ozonmpportal.hb.vkcs.cloud/harmex/landing/img/Card1.png',
+    imgMobile: 'https://ozonmpportal.hb.vkcs.cloud/harmex/landing/img/Card1Mobile.png',
     title: 'Больше продаж, больше охватов, больше прибыли',
     subtitle:
       'Создайте узнаваемость бренда, даже если вы только начинаете. С Harmex выход на популярные площадки становится в разы проще и быстрее. Вам не нужно разбираться в сложных алгоритмах и системах — достаточно базовых знаний и наших доступных инструментов.',
   },
   {
-    img: '/img/Card2.png',
-    imgMobile: '/img/Card2Mobile.png',
+    img: 'https://ozonmpportal.hb.vkcs.cloud/harmex/landing/img/Card2.png',
+    imgMobile: 'https://ozonmpportal.hb.vkcs.cloud/harmex/landing/img/Card2Mobile.png',
     title: 'Эффективность',
     subtitle:
       'Harmex создан как для новичков, так и для профессионалов. Вам не нужны технические знания или сотни часов на обучение. Разберитесь за 2-3 минуты и начните использовать инструменты из нашего каталога.',
   },
   {
-    img: '/img/Card3.png',
-    imgMobile: '/img/Card3Mobile.png',
+    img: 'https://ozonmpportal.hb.vkcs.cloud/harmex/landing/img/Card3.png',
+    imgMobile: 'https://ozonmpportal.hb.vkcs.cloud/harmex/landing/img/Card3Mobile.png',
     title: 'Актуальность инструментов',
     subtitle:
       'С Harmex любая площадка, рынок или ниша становится доступными. Запускайте, развивайте и поддерживайте свой бизнес с минимальными усилиями. Наш ассортимент дополняется на регулярной основе.',
@@ -178,15 +178,15 @@ const plans = ref([
 ])
 
 const items = [
-  '/img/1.jpg',
-  '/img/2.jpg',
-  '/img/3.jpg',
-  '/img/4.jpg',
-  '/img/5.jpg',
-  '/img/6.jpg',
-  '/img/7.jpg',
-  '/img/8.jpg',
-  '/img/9.jpg',
+  'https://ozonmpportal.hb.vkcs.cloud/harmex/landing/img/1.jpg',
+  'https://ozonmpportal.hb.vkcs.cloud/harmex/landing/img/2.jpg',
+  'https://ozonmpportal.hb.vkcs.cloud/harmex/landing/img/3.jpg',
+  'https://ozonmpportal.hb.vkcs.cloud/harmex/landing/img/4.jpg',
+  'https://ozonmpportal.hb.vkcs.cloud/harmex/landing/img/5.jpg',
+  'https://ozonmpportal.hb.vkcs.cloud/harmex/landing/img/6.jpg',
+  'https://ozonmpportal.hb.vkcs.cloud/harmex/landing/img/7.jpg',
+  'https://ozonmpportal.hb.vkcs.cloud/harmex/landing/img/8.jpg',
+  'https://ozonmpportal.hb.vkcs.cloud/harmex/landing/img/9.jpg',
 ]
 
 const carousel = useTemplateRef('carousel')
@@ -287,12 +287,12 @@ const dynamicStyle = computed(() => ({
 }))
 
 const previewImages = ref([
-  '/img/yandexMarket.png',
-  '/img/magnitMarket.png',
-  '/img/sberMarket.png',
-  '/img/avito.png',
-  '/img/ozon.png',
-  '/img/wb.png',
+  'https://ozonmpportal.hb.vkcs.cloud/harmex/landing/img/yandexMarket.png',
+  'https://ozonmpportal.hb.vkcs.cloud/harmex/landing/img/magnitMarket.png',
+  'https://ozonmpportal.hb.vkcs.cloud/harmex/landing/img/sberMarket.png',
+  'https://ozonmpportal.hb.vkcs.cloud/harmex/landing/img/avito.png',
+  'https://ozonmpportal.hb.vkcs.cloud/harmex/landing/img/ozon.png',
+  'https://ozonmpportal.hb.vkcs.cloud/harmex/landing/img/wb.png',
 ])
 
 onMounted(() => {
@@ -398,7 +398,7 @@ onUnmounted(() => {
   <section class="preview__background mt-7 lg:mt-0">
     <img
       ref="previewRef"
-      src="/img/preview__background.png"
+      src="https://ozonmpportal.hb.vkcs.cloud/harmex/landing/img/preview__background.png"
       alt="Каталог"
       class="preview__background__img transition-transform duration-500 ease-out"
       loading="lazy"
@@ -497,7 +497,7 @@ onUnmounted(() => {
     </div>
 
     <img
-      src="/img/speedImg.png"
+      src="https://ozonmpportal.hb.vkcs.cloud/harmex/landing/img/speedImg.png"
       alt="Изображение"
       class="speed__img"
       loading="lazy"
@@ -622,7 +622,7 @@ onUnmounted(() => {
             class="absolute w-[95%] h-[98%] bg-white rounded-t-[50px] bottom-0 left-1/2 transform -translate-x-1/2 overflow-hidden"
           >
             <img
-              :src="`/img/step${index + 1}.png`"
+              :src="`https://ozonmpportal.hb.vkcs.cloud/harmex/landing/img/step${index + 1}.png`"
               :style="{ transform: `translateY(${scrollPositions[index]}%)` }"
               class="w-full transition-transform duration-300 ease-out object-cover"
             />
