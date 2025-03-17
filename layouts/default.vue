@@ -210,7 +210,7 @@ function clearLocalStorage() {
           <div
             class="gap-6 font-[500] text-[14px] leading-[17.5px] flex-col flex items-start"
           >
-           <Nuxt-Link v-for="item in navItems" :key="item.value"  :to="`#${item.value}`">{{ item.title }}</Nuxt-Link>
+           <Nuxt-Link @click="toggleOpen" v-for="item in navItems" :key="item.value"  :to="`#${item.value}`">{{ item.title }}</Nuxt-Link>
           </div>
         </nav>
       </Transition>

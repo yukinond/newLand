@@ -345,7 +345,7 @@ onUnmounted(() => {
           <Icon name="charm:arrow-right" class="ml-2" />
         </a>
         <a
-          href="#functions"
+          href="#guide"
           class="btn-glass"
           >Гайд</a
         >
@@ -417,7 +417,7 @@ onUnmounted(() => {
     <div
       v-for="(item, index) in resultInfo"
       :key="index"
-      class="default__steps padding__block"
+      class="default__steps padding__block !justify-between"
       :class="
         index % 2 === 0 ? 'lg:!pl-0 justify-start' : 'lg:!pr-0 justify-end'
       "
@@ -452,8 +452,9 @@ onUnmounted(() => {
         Я всегда считал, что для успешного запуска и развития бизнеса по продаже
         товаров и услуг необходимы правильные инструменты.
       </p>
-      <p>Инструменты, которые будут:</p>
     </span>
+
+    <p class="default-nav__text">Инструменты, которые будут:</p>
 
     <div class="speed__advantages">
       <Icon
@@ -549,8 +550,8 @@ onUnmounted(() => {
   <section class="for default-nav padding__block" id="for">
     <p class="default__subtitle">Для кого?</p>
 
-    <h2 class="default__title !text-left">
-      Подходит ли Harmex для ваших <br />
+    <h2 class="default__title !text-left max-w-[720px]">
+      Подходит ли Harmex для ваших
       целей?
     </h2>
 
@@ -721,12 +722,12 @@ onUnmounted(() => {
     </div>
   </section>
 
-  <section class="price mb-20">
+  <section class="price mb-20" id="guide">
     <div class="padding__block default-nav lg:!flex !contents">
       <p
         class="default__subtitle order-1 lg:order-none px-5 pt-16 lg:px-0 lg:pt-0"
       >
-        Цена
+        Гайд
       </p>
 
       <h2
