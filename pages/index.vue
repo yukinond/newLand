@@ -9,21 +9,24 @@ const targetUrlAuth = ref('https://app.harmex.ru/auth')
 const resultInfo = ref([
   {
     img: 'https://ozonmpportal.hb.vkcs.cloud/harmex/landing/img/Card1.png',
-    imgMobile: 'https://ozonmpportal.hb.vkcs.cloud/harmex/landing/img/Card1Mobile.png',
+    imgMobile:
+      'https://ozonmpportal.hb.vkcs.cloud/harmex/landing/img/Card1Mobile.png',
     title: 'Больше продаж, больше охватов, больше прибыли',
     subtitle:
       'Создайте узнаваемость бренда, даже если вы только начинаете. С Harmex выход на популярные площадки становится в разы проще и быстрее. Вам не нужно разбираться в сложных алгоритмах и системах — достаточно базовых знаний и наших доступных инструментов.',
   },
   {
     img: 'https://ozonmpportal.hb.vkcs.cloud/harmex/landing/img/Card2.png',
-    imgMobile: 'https://ozonmpportal.hb.vkcs.cloud/harmex/landing/img/Card2Mobile.png',
+    imgMobile:
+      'https://ozonmpportal.hb.vkcs.cloud/harmex/landing/img/Card2Mobile.png',
     title: 'Эффективность',
     subtitle:
       'Harmex создан как для новичков, так и для профессионалов. Вам не нужны технические знания или сотни часов на обучение. Разберитесь за 2-3 минуты и начните использовать инструменты из нашего каталога.',
   },
   {
     img: 'https://ozonmpportal.hb.vkcs.cloud/harmex/landing/img/Card3.png',
-    imgMobile: 'https://ozonmpportal.hb.vkcs.cloud/harmex/landing/img/Card3Mobile.png',
+    imgMobile:
+      'https://ozonmpportal.hb.vkcs.cloud/harmex/landing/img/Card3Mobile.png',
     title: 'Актуальность инструментов',
     subtitle:
       'С Harmex любая площадка, рынок или ниша становится доступными. Запускайте, развивайте и поддерживайте свой бизнес с минимальными усилиями. Наш ассортимент дополняется на регулярной основе.',
@@ -178,7 +181,6 @@ const plans = ref([
 ])
 
 const items = [
-  'https://ozonmpportal.hb.vkcs.cloud/harmex/landing/img/1.jpg',
   'https://ozonmpportal.hb.vkcs.cloud/harmex/landing/img/2.jpg',
   'https://ozonmpportal.hb.vkcs.cloud/harmex/landing/img/3.jpg',
   'https://ozonmpportal.hb.vkcs.cloud/harmex/landing/img/4.jpg',
@@ -187,6 +189,7 @@ const items = [
   'https://ozonmpportal.hb.vkcs.cloud/harmex/landing/img/7.jpg',
   'https://ozonmpportal.hb.vkcs.cloud/harmex/landing/img/8.jpg',
   'https://ozonmpportal.hb.vkcs.cloud/harmex/landing/img/9.jpg',
+  'https://ozonmpportal.hb.vkcs.cloud/harmex/landing/img/1.jpg',
 ]
 
 const carousel = useTemplateRef('carousel')
@@ -217,7 +220,7 @@ const stepsInfo = ref([
   {
     title: 'Создайте заказ',
     description:
-      'Запланируйте выполнение заказа в любое удобное время — услуга будет выполнена точно в срок.s',
+      'Запланируйте выполнение заказа в любое удобное время — услуга будет выполнена точно в срок.',
   },
   {
     title: 'Получите отчетность',
@@ -247,15 +250,6 @@ const handleScroll = () => {
   })
 }
 
-onMounted(() => {
-  window.addEventListener('scroll', handleScroll)
-  handleScroll()
-})
-
-onUnmounted(() => {
-  window.removeEventListener('scroll', handleScroll)
-})
-
 const previewRef = ref(null)
 const isVisible = ref(false)
 
@@ -265,7 +259,7 @@ useIntersectionObserver(previewRef, ([{ isIntersecting }]) => {
   }
 })
 
-const getDelay = (index: any) => `${index * 200}ms`
+const getDelay = (index: any) => `${index * 100}ms`
 
 const scrollProgress = ref(0)
 
@@ -296,20 +290,23 @@ const previewImages = ref([
 ])
 
 onMounted(() => {
+  window.addEventListener('scroll', handleScroll)
+  handleScroll()
+
+  isVisible.value = true
   window.addEventListener('scroll', handleImageScroll)
   handleImageScroll()
 })
 
 onUnmounted(() => {
+  window.removeEventListener('scroll', handleScroll)
   window.removeEventListener('scroll', handleImageScroll)
 })
 </script>
 
 <template>
-  <!-- -->
   <section ref="previewRef" class="preview padding__block">
     <div class="preview__content">
-       
       <h1
         class="preview__title transition-all duration-700 ease-out"
         :class="
@@ -347,7 +344,13 @@ onUnmounted(() => {
           Попробовать сейчас
           <Icon name="charm:arrow-right" class="ml-2" />
         </a>
-        <button class="btn-glass">Гайд</button>
+        <a
+          :href="targetUrlAuth"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-glass"
+          >Гайд</a
+        >
       </div>
     </div>
     <div
@@ -391,8 +394,6 @@ onUnmounted(() => {
           class="absolute inset-0 z-[-1] filter blur-[40px] translate-y-[30%] bg-gradient-to-r from-[#4778F5] via-[#924FE8] to-[#E6483D] opacity-50"
         ></div>
       </div>
-
-
     </div>
   </section>
   <section class="preview__background mt-7 lg:mt-0">
@@ -407,7 +408,7 @@ onUnmounted(() => {
     />
   </section>
 
-  <section class="result" id="result" >
+  <section class="result" id="result">
     <div class="result__text padding__block">
       <p class="default__subtitle">Результат</p>
       <h2 class="default__title max-w-[752px]">
@@ -419,14 +420,16 @@ onUnmounted(() => {
       v-for="(item, index) in resultInfo"
       :key="index"
       class="default__steps padding__block"
-      :class="index % 2 === 0 ? 'lg:!pl-0 justify-start' : 'lg:!pr-0 justify-end'"
+      :class="
+        index % 2 === 0 ? 'lg:!pl-0 justify-start' : 'lg:!pr-0 justify-end'
+      "
     >
-    <img
-      :src="`${isLg ? item.img : item.imgMobile}?t=${Date.now()}`"
-      alt="Card img"
-      class="default__steps__img max-h-[350px] object-contain"
-      :class="index % 2 === 0 ? 'lg:order-1' : 'lg:order-2'"
-    />
+      <img
+        :src="`${isLg ? item.img : item.imgMobile}?t=${Date.now()}`"
+        alt="Card img"
+        class="default__steps__img max-h-[350px] object-contain"
+        :class="index % 2 === 0 ? 'lg:order-1' : 'lg:order-2'"
+      />
 
       <div
         class="default__steps__text"
@@ -441,17 +444,17 @@ onUnmounted(() => {
   <section id="speed" class="speed default-nav padding__block">
     <p class="default__subtitle">Скорость</p>
 
-    <h2 class="default__title !text-left max-w-[620px]">
-      Пока вы думаете, кто-то 
-      выходит в ТОП
+    <h2 class="default__title !text-left max-w-[300px] sm:max-w-[620px]">
+      Пока вы думаете, кто-то выходит в ТОП
     </h2>
 
     <span class="default-nav__text">
       <p>Привет, Харм на связи.</p>
-      <p>Я всегда считал, что для успешного запуска и
-      развития бизнеса по продаже товаров и услуг необходимы правильные
-      инструменты.</p>
-      <p>Инструменты, которые будут:</p>      
+      <p>
+        Я всегда считал, что для успешного запуска и развития бизнеса по продаже
+        товаров и услуг необходимы правильные инструменты.
+      </p>
+      <p>Инструменты, которые будут:</p>
     </span>
 
     <div class="speed__advantages">
@@ -465,7 +468,10 @@ onUnmounted(() => {
     </div>
 
     <div class="speed__advantages">
-      <Icon name="lucide:user-round-search" class="lg:!w-6 lg:!h-6 !w-5 !h-5 text-primary shrink-0" />
+      <Icon
+        name="lucide:user-round-search"
+        class="lg:!w-6 lg:!h-6 !w-5 !h-5 text-primary shrink-0"
+      />
       <span class="speed__advantages__text"
         >Просты в использовании — интуитивно понятны даже новичку.</span
       >
@@ -505,7 +511,7 @@ onUnmounted(() => {
   </section>
 
   <section
-    class="speed-tasks padding__block bg-[#F9F9F9] flex flex-col justify-center items-center gap-20"
+    class="speed-tasks padding__block"
   >
     <div class="speed-tasks__content">
       <div v-for="item in speedTasks" class="speed-tasks__card">
@@ -554,9 +560,7 @@ onUnmounted(() => {
       Определите, соответствует ли Harmex вашим целям и задачам.
     </p>
 
-    <div
-      class="for__content"
-    >
+    <div class="for__content">
       <div class="for__cards">
         <div
           class="flex flex-col gap-5 flex-1 bg-[#F9F9F9] rounded-[20px] p-5"
@@ -609,20 +613,32 @@ onUnmounted(() => {
       class="default__steps padding-y__block !justify-between overflow-hidden"
     >
       <div
-        class="w-full bg-[#F7F7F7] lg:max-w-[520px] min-h-[300px] sm:min-h-[460px] flex justify-center items-end rounded-3xl relative "
+        class="w-full bg-[#F7F7F7] lg:max-w-[520px] min-h-[300px] sm:min-h-[460px] flex justify-center items-end rounded-3xl relative"
         :class="index % 2 === 0 ? 'lg:order-1' : 'lg:order-2'"
       >
-        <div class="bg-black w-[70%] h-[90%] min-h-[280px] sm:min-h-[430px] rounded-t-[55px] flex justify-center relative sm:min-w-[364px]">
+        <div
+          class="bg-black w-[70%] h-[90%] min-h-[280px] sm:min-h-[430px] rounded-t-[55px] flex justify-center relative sm:min-w-[364px]"
+        >
           <div class="bg-black w-[75px] h-[25px] z-10 rounded-full mt-5" />
-          <div class="bg-black h-[30px] w-[2px] absolute -left-0.5 rounded-l-full translate-y-24"></div>
-          <div class="bg-black h-[55px] w-[2px] absolute -left-0.5 rounded-l-full translate-y-40"></div>
-          <div class="bg-black h-[55px] w-[2px] absolute -left-0.5 rounded-l-full translate-y-56"></div>
-          <div class="bg-black h-[75px] w-[2px] absolute -right-0.5 rounded-r-full translate-y-40 lg:translate-y-56"></div>
+          <div
+            class="bg-black h-[30px] w-[2px] absolute -left-0.5 rounded-l-full translate-y-24"
+          ></div>
+          <div
+            class="bg-black h-[55px] w-[2px] absolute -left-0.5 rounded-l-full translate-y-40"
+          ></div>
+          <div
+            class="bg-black h-[55px] w-[2px] absolute -left-0.5 rounded-l-full translate-y-56"
+          ></div>
+          <div
+            class="bg-black h-[75px] w-[2px] absolute -right-0.5 rounded-r-full translate-y-40 lg:translate-y-56"
+          ></div>
           <div
             class="absolute w-[95%] h-[98%] bg-white rounded-t-[50px] bottom-0 left-1/2 transform -translate-x-1/2 overflow-hidden"
           >
             <img
-              :src="`https://ozonmpportal.hb.vkcs.cloud/harmex/landing/img/step${index + 1}.png`"
+              :src="`https://ozonmpportal.hb.vkcs.cloud/harmex/landing/img/step${
+                index + 1
+              }.png`"
               :style="{ transform: `translateY(${scrollPositions[index]}%)` }"
               class="w-full transition-transform duration-300 ease-out object-cover"
             />
@@ -674,10 +690,15 @@ onUnmounted(() => {
             <p class="text-[#737373] text-2xl">{{ item.priceDescription }}</p>
           </div>
 
-          <button :class="index % 2 === 0 ? 'btn-glass' : 'btn-primary'">
+          <a
+            :href="targetUrlAuth"
+            target="_blank"
+            rel="noopener noreferrer"
+            :class="index % 2 === 0 ? 'btn-glass' : 'btn-primary'"
+          >
             {{ item.buttonText }}
             <Icon name="material-symbols:arrow-right" class="ml-2 !w-6 !h-6" />
-          </button>
+          </a>
 
           <ul class="price__card__features">
             <li
@@ -702,7 +723,7 @@ onUnmounted(() => {
     </div>
   </section>
 
-   <section class="price mb-20">
+  <section class="price mb-20">
     <div class="padding__block default-nav lg:!flex !contents">
       <p
         class="default__subtitle order-1 lg:order-none px-5 pt-16 lg:px-0 lg:pt-0"
@@ -734,14 +755,22 @@ onUnmounted(() => {
       </div>
     </div>
 
-    <div class="w-full order-4 lg:order-none">
+    <div class="w-full lg:w-[135%] order-4 lg:order-none">
       <UCarousel
         ref="carousel"
+        :startIndex="0"
         v-slot="{ item }"
         :items="items"
-        :ui="{ item: 'basis-3/4 lg:basis-1/4 snap-start' }"
+        :ui="{ item: 'basis-3/4 lg:basis-2/7 snap-center' }"
+        loop
+        :interval="3000"
       >
-        <img :src="item" height="234" class="rounded-lg" />
+        <img
+          :src="item"
+          height="234"
+          class="rounded-lg border border-[#EBEBEB]"
+        />
+        <!-- {{ item }} -->
       </UCarousel>
     </div>
   </section>

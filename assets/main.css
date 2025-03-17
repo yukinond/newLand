@@ -18,6 +18,12 @@ html {
     scroll-behavior: smooth;
 }
 
+.mobile-menu {
+    -webkit-box-shadow: 0px 10px 38px 5px rgba(0,0,0,0.38);
+    -moz-box-shadow: 0px 10px 38px 5px rgba(0,0,0,0.38);
+    box-shadow: 0px 10px 38px 5px rgba(0,0,0,0.38);
+}
+
 .btn-primary {
     @apply text-white text-sm font-medium bg-primary px-[30px] py-[8px] rounded-full items-center inline-flex justify-center cursor-pointer;
 }
@@ -189,6 +195,10 @@ html {
     @apply font-normal text-lg lg:text-xl text-[#0F132499] leading-7;
 }
 
+.speed {
+    background: linear-gradient(180deg, rgba(249, 236, 233, 1) 1%, rgba(255, 255, 255, 100%) 80%);
+}
+
 .speed__advantages {
     @apply flex gap-4 items-center
 }
@@ -205,12 +215,16 @@ html {
     @apply w-full object-cover max-w-[1200px] flex mx-auto mt-10 lg:mt-16
 }
 
+.speed-tasks {
+    @apply bg-white flex flex-col justify-center items-center gap-20
+}
+
 .speed-tasks__content {
     @apply flex gap-8 lg:flex-row flex-col
 }
 
 .speed-tasks__card {
-    @apply bg-white rounded-[20px] flex flex-col gap-4 p-5 flex-1
+    @apply bg-[#F9F9F9] rounded-[20px] flex flex-col gap-4 p-5 flex-1
 }
 
 .speed-tasks__card__title {

@@ -173,7 +173,7 @@ function clearLocalStorage() {
         <nav
           v-if="isOpen"
           id="mobile-menu"
-          class="fixed flex-col top-0 left-0 w-full bg-white z-50 flex gap-5 items-start justify-start py-3 px-5 lg:hidden"
+          class="mobile-menu fixed flex-col top-0 left-0 w-full bg-white z-50 flex gap-5 items-start justify-start py-3 px-5 lg:hidden"
           :class="popupVisible ? 'h-screen' : 'h-fit'"
         >
           <button
@@ -270,7 +270,7 @@ function clearLocalStorage() {
             >
             <a
               class="font-[500] text-sm flex gap-3 items-center"
-              href="https://t.me/harmexpro_bot"
+              href="https://t.me/+gQ834W_1awM4ZTky"
               target="_blank"
               rel="noopener noreferrer"
               ><img
@@ -308,7 +308,7 @@ function clearLocalStorage() {
         </div>
       </div>
       <div
-        class="pt-12 flex lg:flex-row flex-col justify-center lg:justify-between text-[14px] leading-[17.5px] gap-12"
+        class="pt-12 flex lg:flex-row flex-col justify-center lg:justify-between text-[14px] leading-[17.5px] gap-12 lg:-ml-10"
       >
         <p class="text-white text-center lg:text-left">
           ©{{ new Date().getFullYear() }} HARMEX Все права защищены.
