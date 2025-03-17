@@ -345,9 +345,7 @@ onUnmounted(() => {
           <Icon name="charm:arrow-right" class="ml-2" />
         </a>
         <a
-          :href="targetUrlAuth"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="#functions"
           class="btn-glass"
           >Гайд</a
         >
@@ -427,7 +425,7 @@ onUnmounted(() => {
       <img
         :src="`${isLg ? item.img : item.imgMobile}?t=${Date.now()}`"
         alt="Card img"
-        class="default__steps__img max-h-[350px] object-contain"
+        class="default__steps__img "
         :class="index % 2 === 0 ? 'lg:order-1' : 'lg:order-2'"
       />
 
@@ -444,7 +442,7 @@ onUnmounted(() => {
   <section id="speed" class="speed default-nav padding__block">
     <p class="default__subtitle">Скорость</p>
 
-    <h2 class="default__title !text-left max-w-[300px] sm:max-w-[620px]">
+    <h2 class="default__title !text-left max-w-[300px] lg:max-w-[420px]">
       Пока вы думаете, кто-то выходит в ТОП
     </h2>
 

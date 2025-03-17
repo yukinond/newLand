@@ -235,7 +235,7 @@ function clearLocalStorage() {
                   <NuxtLink v-for="item in navItems" :to="`#${item.value}`">{{ item.title }}</NuxtLink>
                </div>
                <div class="flex flex-col gap-2 text-white">
-                <p class="text-[#FFFFFF99]">Наследие</p>
+                <p class="text-[#FFFFFF99]">Документы</p>
                 <a
                   href="/docs/conf_policy.pdf"
                   target="_blank"
@@ -278,7 +278,7 @@ function clearLocalStorage() {
                 src="https://ozonmpportal.hb.vkcs.cloud/harmex/landing1/img/footer/tg.svg"
                 class="w-5 h-5"
                 loading="lazy"
-              />Презентация Harmex</a
+              />Telegram-канал Harmex</a
             >
             <a
               class="mb-2 text-sm text-[#47A4D2]"
@@ -308,7 +308,7 @@ function clearLocalStorage() {
         </div>
       </div>
       <div
-        class="pt-12 flex lg:flex-row flex-col justify-center lg:justify-between text-[14px] leading-[17.5px] gap-12 lg:-ml-10"
+        class="pt-12 lg:pt-0 lg:-mt-5 flex lg:flex-row flex-col justify-center lg:justify-between text-[14px] leading-[17.5px] gap-12 "
       >
         <p class="text-white text-center lg:text-left">
           ©{{ new Date().getFullYear() }} HARMEX Все права защищены.
