@@ -181,6 +181,7 @@ const plans = ref([
 ])
 
 const items = [
+'https://ozonmpportal.hb.vkcs.cloud/harmex/landing/img/1.jpg',
   'https://ozonmpportal.hb.vkcs.cloud/harmex/landing/img/2.jpg',
   'https://ozonmpportal.hb.vkcs.cloud/harmex/landing/img/3.jpg',
   'https://ozonmpportal.hb.vkcs.cloud/harmex/landing/img/4.jpg',
@@ -189,7 +190,6 @@ const items = [
   'https://ozonmpportal.hb.vkcs.cloud/harmex/landing/img/7.jpg',
   'https://ozonmpportal.hb.vkcs.cloud/harmex/landing/img/8.jpg',
   'https://ozonmpportal.hb.vkcs.cloud/harmex/landing/img/9.jpg',
-  'https://ozonmpportal.hb.vkcs.cloud/harmex/landing/img/1.jpg',
 ]
 
 const carousel = useTemplateRef('carousel')
@@ -758,7 +758,7 @@ onUnmounted(() => {
     <div class="w-full lg:w-[135%] order-4 lg:order-none">
       <UCarousel
         ref="carousel"
-        :startIndex="0"
+        :startIndex="isLg ? 1 : 0"
         v-slot="{ item }"
         :items="items"
         :ui="{ item: 'basis-3/4 lg:basis-2/7 snap-center' }"
