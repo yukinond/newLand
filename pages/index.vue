@@ -431,7 +431,7 @@ onUnmounted(() => {
 
       <div
         class="default__steps__text"
-        :class="index % 2 === 0 ? 'lg:order-2' : 'lg:order-1'"
+        :class="index % 2 === 0 ? 'lg:order-2 mx-auto' : 'lg:order-1 mx-auto'"
       >
         <h3 class="default__steps__title">{{ item.title }}</h3>
         <p class="default__steps__subtitle">{{ item.subtitle }}</p>
@@ -550,7 +550,7 @@ onUnmounted(() => {
   <section class="for default-nav padding__block" id="for">
     <p class="default__subtitle">Для кого?</p>
 
-    <h2 class="default__title !text-left max-w-[720px]">
+    <h2 class="default__title !text-left max-w-[720px] lg:max-w-none">
       Подходит ли Harmex для ваших
       целей?
     </h2>
